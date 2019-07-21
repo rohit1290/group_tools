@@ -6,25 +6,25 @@
  */
 
 $page_owner = elgg_get_page_owner_entity();
-if (!($page_owner instanceof ElggGroup) || !$page_owner->canEdit()) {
+if (!$page_owner instanceof ElggGroup || !$page_owner->canEdit()) {
 	return;
 }
 
 $user = elgg_extract('entity', $vars);
-if (!($user instanceof ElggUser)) {
+if (!$user instanceof ElggUser) {
 	return;
 }
 
-$icon = elgg_view_entity_icon($user, 'small');
 $menu = elgg_view_menu('group:membershiprequest', [
 	'entity' => $user,
 	'group' => $page_owner,
 	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz float-alt',
+	'class' => 'elgg-menu-hz',
 ]);
 
+$content = '';
+
 // check for motivation
-$motivation = '';
 $annotations = $page_owner->getAnnotations([
 	'annotation_name' => 'join_motivation',
 	'limit' => 1,
@@ -39,30 +39,28 @@ if (!empty($annotations)) {
 		'class' => 'mtn',
 	]);
 	
-	$motivation = elgg_format_element('div', [
+	$content .= elgg_format_element('div', [
 		'id' => "group-tools-group-membershiprequest-motivation-{$user->guid}",
 		'class' => 'hidden',
 	], $motivation);
 }
 
-$summary = elgg_view('user/elements/summary', [
-	'entity' => $user,
-	'icon' => false,
-	'subtitle' => $user->briefdescription,
-	'metadata' => $menu,
-	'content' => $motivation,
-]);
-
 // allow a reason for the decline
 $form_vars = [
 	'id' => "group-kill-request-{$user->guid}",
 	'data-guid' => $user->guid,
-];
+	];
 $body_vars = [
 	'group' => $page_owner,
 	'user' => $user,
 ];
 $decline_form = elgg_view_form('groups/killrequest', $form_vars, $body_vars);
-$summary .= elgg_format_element('div', ['class' => 'hidden'], $decline_form);
+$content .= elgg_format_element('div', ['class' => 'hidden'], $decline_form);
 
-echo elgg_view_image_block($icon, $summary);
+echo elgg_view('user/elements/summary', [
+	'entity' => $user,
+	'icon_entity' => $user,
+	'subtitle' => $user->briefdescription ?: false,
+	'metadata' => $menu,
+	'content' => $content,
+]);

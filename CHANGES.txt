@@ -1,6 +1,27 @@
 Version history
 ===============
 
+10.2.1 (2019-07-11):
+
+- fixed: fatal exception during group member export
+- fixed: incorrect query for stale group notifications
+
+10.2 (2019-06-12):
+
+- added: remove user from group to user entity menu
+- fixed: don't find banned users in autocomplete
+
+10.1 (2019-05-29):
+
+- changed: split group invitations/requests in tabs
+- fixed: deprecated function call
+- fixed: deprecated route hook for register
+- fixed: deprecated where clause
+- fixed: export group members not available
+- fixed: group access could be private
+- fixed: layout issues in group membership requests
+- fixed: only cleanup title menu for admin approve if enabled
+
 10.0.1 (2019-04-17):
 
 - fixed: auto join hidden groups during login
