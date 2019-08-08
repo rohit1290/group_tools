@@ -20,7 +20,6 @@ return;
 
 $lis = [];
 foreach ($emails as $annotation) {
-	
 	list(,$email) = explode('|', $annotation->value);
 	
 	$email_title = elgg_view('output/email', ['value' => $email]);

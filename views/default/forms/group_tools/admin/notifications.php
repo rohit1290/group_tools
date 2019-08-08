@@ -39,7 +39,6 @@ $notification_options = [
 
 $options = [];
 foreach ($methods as $method) {
-	
 	// make correct label
 	$label = $method;
 	if (elgg_language_key_exists("notification:method:{$method}")) {

@@ -226,7 +226,7 @@ function group_tools_invite_email(ElggGroup $group, $email, $text = "", $resend 
 /**
  * Get all the groups this email address is invited for
  *
- * @param string $email     the email address
+ * @param string $email the email address
  *
  * @return false|ElggGroup[]
  */
@@ -551,7 +551,7 @@ function group_tools_check_domain_based_group(ElggGroup $group, ElggUser $user =
 /**
  * Get all groups based on the email domain of the user from the group settings
  *
- * @param ElggUser $user      The user used to base the search
+ * @param ElggUser $user The user used to base the search
  *
  * @return false|ElggGroup[]
  */

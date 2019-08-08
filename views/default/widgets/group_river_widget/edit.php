@@ -41,7 +41,6 @@ echo elgg_view_field([
 
 // only allow a group picker if not in a group already
 if ($widget->context !== 'groups') {
-	
 	$group_picker_options = [
 		'#type' => 'grouppicker',
 		'#label' => elgg_echo('widgets:group_river_widget:edit:group'),

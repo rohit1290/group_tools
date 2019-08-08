@@ -109,7 +109,6 @@ foreach ($members as $member) {
 	// profile fields
 	if (!empty($profile_fields)) {
 		foreach ($profile_fields as $metadata_name => $type) {
-			
 			$value = $member->$metadata_name;
 			if (is_array($value)) {
 				$value = implode(', ', $value);

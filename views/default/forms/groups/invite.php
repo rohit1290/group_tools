@@ -92,14 +92,14 @@ echo elgg_view('input/hidden', ['name' => 'group_guid', 'value' => $group->guid]
 // show buttons
 $footer_fields = [
 	[
-	'#type' => 'submit', 
-	'name' => 'submit', 
+	'#type' => 'submit',
+	'name' => 'submit',
 	'value' => elgg_echo('invite'),
 	],
 ];
 if (elgg_is_admin_logged_in()) {
 	$footer_fields[] = [
-		'#type' => 'submit', 
+		'#type' => 'submit',
 		'name' => 'submit',
 		'value' => elgg_echo('group_tools:add_users'),
 		'onclick' => 'return confirm("' . elgg_echo('group_tools:group:invite:add:confirm') . '");',

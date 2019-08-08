@@ -75,7 +75,6 @@ class AutoJoin {
 	protected function checkExclusives() {
 		
 		foreach ($this->configs as $config) {
-			
 			if (elgg_extract('type', $config) !== 'exclusive') {
 				continue;
 			}
@@ -105,7 +104,6 @@ class AutoJoin {
 		$group_guids = [];
 		
 		foreach ($this->configs as $config) {
-			
 			if (elgg_extract('type', $config) !== 'additional') {
 				continue;
 			}

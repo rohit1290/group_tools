@@ -5,7 +5,7 @@ define(['jquery', 'elgg'], function ($, elgg) {
 			event.preventDefault();
 			event.stopPropagation();
 			$('#group-tools-invite-email .elgg-button-submit').click();
-		}		
+		}
 	});
 	
 	$(document).on('click', '#group-tools-invite-email .elgg-list-email .elgg-icon-delete', function (event) {

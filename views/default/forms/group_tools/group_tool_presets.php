@@ -13,7 +13,6 @@ $group_tools = elgg()->group_tools->all();
 
 // list existing
 if (!empty($presets)) {
-
 	foreach ($presets as $index => $values) {
 		echo '<div>';
 		echo '<div class="float-alt">';

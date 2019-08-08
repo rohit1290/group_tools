@@ -15,12 +15,12 @@ if (!($user instanceof ElggUser)) {
 
 $content = elgg_view_field([
 	'#type' => 'hidden',
-	'name' => 'group_guid', 
+	'name' => 'group_guid',
 	'value' => $group->guid,
 ]);
 $content .= elgg_view_field([
 	'#type' => 'hidden',
-	'name' => 'user_guid', 
+	'name' => 'user_guid',
 	'value' => $user->guid,
 ]);
 

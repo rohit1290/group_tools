@@ -35,24 +35,24 @@ if (in_array('yes', [$invite, $invite_csv, $invite_email])) {
 elgg_push_breadcrumb($group->getDisplayName(), $group->getURL());
 elgg_push_breadcrumb($breadcrumb);
 
-$content = elgg_view_form('groups/invite', array(
+$content = elgg_view_form('groups/invite', [
 	'id' => 'invite_to_group',
 	'class' => 'elgg-form-alt mtm',
 	'enctype' => 'multipart/form-data', // to allow csv upload
-), array(
+], [
 	'entity' => $group,
 	'invite_friends' => $invite_friends,
 	'invite' => $invite,
 	'invite_email' => $invite_email,
 	'invite_csv' => $invite_csv,
-));
+]);
 
 // build page
-$params = array(
+$params = [
 	'content' => $content,
 	'title' => $title,
 	'filter' => '',
-);
+];
 $body = elgg_view_layout('content', $params);
 
 // draw page

@@ -22,4 +22,4 @@ echo '<div class="group-tools-simplified-options clearfix">';
 echo $open_text . $closed_text;
 echo '</div>';
 
-echo elgg_format_element('div', ['class' => 'hidden'] , elgg_view('groups/edit/access', $vars));
+echo elgg_format_element('div', ['class' => 'hidden'], elgg_view('groups/edit/access', $vars));

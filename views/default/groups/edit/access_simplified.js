@@ -18,7 +18,7 @@ define(function (require) {
 			$membership.val('0');
 			$content_access_mode.val('members_only');
 			$group_default_access.prop('disabled', true);
-		}		
+		}
 	};
 
 	$('#group-tools-group-edit-access .group-tools-simplified-option').on('click', function() {

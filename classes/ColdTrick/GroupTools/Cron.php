@@ -36,7 +36,6 @@ class Cron {
 		elgg_call(ELGG_IGNORE_ACCESS, function() use ($groups) {
 			// process groups
 			foreach ($groups as $group) {
-				
 				$stale_info = group_tools_get_stale_info($group);
 				if (empty($stale_info)) {
 					// error
